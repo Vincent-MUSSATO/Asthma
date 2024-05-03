@@ -1,0 +1,115 @@
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Lato, Helvetica, sans-serif;
+    background: #57cf93;
+} 
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #f1f1f1;
+    font-weight: 100;
+    margin-bottom: 250px;
+}
+h1 span {
+    font-weight: 600;
+}
+.nav-toggler {
+    position: fixed;
+    z-index: 10;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #5c69db;
+    transition: transform 0.3s ease-out,
+    opacity 0.1s ease-out;
+}
+.l1 {
+    transform: translateY(-10px)
+}
+.l3 {
+    transform: translateY(10px)
+}
+
+
+
+.nav-toggler.active .l1 {
+    transform: translateY(0px) rotate(135deg);
+}
+.nav-toggler.active .l2 {
+    opacity: 0;
+}
+.nav-toggler.active .l3 {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+.navbar-side {
+    position: fixed;
+    width: 30vw;
+    min-height: 100vh;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #263aec3d;
+    border-left: 1px solid #cfcfcf;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+    padding-bottom: 50px; /* Ajoute un espace en bas pour le logo */
+}
+
+.navbar-side img {
+    position: absolute;
+    bottom: 0;
+    width: 150px; /* Taille du logo */
+    margin-bottom: 10px; /* Marge optionnelle pour espacement */
+}
+
+.navbar-side a {
+    margin-top: 10px; /* Marge optionnelle pour espacement */
+    font-family: Quicksand, sans-serif;
+    color: #f1f1f1;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+}
+    
+
+
+.navbar-side.active {
+    transform: translate(0);
+}
+.navbar-side a {
+    font-family: Quicksand, sans-serif;
+    color: #f1f1f1;
+    font-size: 20px;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}

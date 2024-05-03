@@ -1,0 +1,996 @@
+/* Google Fonts - Poppins */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    margin: 80px auto 30px;
+    text-align: right; /* Aligne le texte du conteneur vers la droite */
+
+}
+
+/* Styles pour les deux menus déroulants */
+.select-btn, .second-dropdown .select-btn {
+    
+    display: flex;
+    height: 50px;
+    position: center;
+    max-width: 550px;
+    width: 100;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f8f5f5;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn .btn-text, .second-dropdown .btn-text {
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+}
+
+.select-btn .arrow-dwn, .second-dropdown .arrow-dwn {
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #21aa5f;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #21aa5f;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.select-btn.open .arrow-dwn, .second-dropdown.open .arrow-dwn {
+    transform: rotate(-180deg);
+}
+
+.list-items, .second-dropdown .list-items {
+    position: relative;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-btn.open ~ .list-items, .second-dropdown.open ~ .list-items {
+    display: block;
+}
+
+
+.list-items .item, .second-dropdown .list-items .item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor:pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+
+.list-items .item:hover, .second-dropdown .list-items .item:hover {
+    background-color: #e7edfe;
+}
+
+.item .item-text, .second-dropdown .item .item-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 15px;
+    
+}
+
+.item .checkbox, .second-dropdown .item .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 110px; /* Ajoute un espace à droite de la case à cocher */
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    border: 1.5px solid #21aa5f; /* Couleur de la bordure de la checkbox */
+    transition: all 0.3s ease-in-out;
+}
+
+.item.checked .checkbox, .second-dropdown .item.checked .checkbox {
+    background-color: #40f47c;
+    border-color: #40f47c;
+}
+
+.item .checkbox:hover, .second-dropdown .item .checkbox:hover {
+    background-color: #d3f0e2; /* Couleur de fond de la checkbox lorsqu'elle est survolée */
+}
+
+.checkbox .check-icon, .second-dropdown .checkbox .check-icon {
+    color: #fff;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+
+.item.checked .check-icon, .second-dropdown .item.checked .check-icon {
+    transform: scale(1);
+    color: #40f47c; /* Couleur du check lorsque la checkbox est cochée */
+
+}
+
+/* css pour le menu sur la droite */
+
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Lato, Helvetica, sans-serif;
+    background: #ffffff;
+    
+   
+} 
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nomappli {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    background-color: #d2fdd5; /* Couleur de fond de la barre horizontale */
+    padding: 0 20px; /* Espacement intérieur pour le contenu */
+    box-sizing: border-box; /* Inclure le padding dans la largeur */
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+   
+}
+
+.text-container {
+    position: relative;
+    margin-left: -120px;
+    margin-top: 250px;
+    z-index: 1;
+}
+
+.text-container h1 {
+    position: relative;
+    font-size: 40px;
+    color: #21aa5f;
+    font-weight: 10;
+    margin-bottom: 150px;
+    margin-top: -40px; 
+    font-family: fantasy;
+    z-index: 1;
+    text-shadow: #32333a;
+}
+
+
+.logo-container {
+    position: relative;
+    margin-right:60px; 
+    margin-top:0px;
+    z-index: 1;
+
+    
+}
+
+.Mussa {
+    position: relative;
+    color: #2ba6c5; /* Couleur verte */
+    font-size: 60px;
+    font-weight: 10;
+    margin-bottom: 150px;
+    margin-top: -40px; /* Remonter uniquement le texte */
+    font-family: fantasy;
+    z-index: 1;
+    text-shadow: #32333a;
+}
+.Lare {
+    position: relative;
+    color: #2ba6c5; /* Couleur verte */
+    font-size: 60px;
+    font-weight: 10;
+    margin-bottom: 150px;
+    margin-top: -40px; /* Remonter uniquement le texte */
+    font-family: fantasy;
+    z-index: 1;
+}
+
+
+.logo {
+    position:relative;
+    width: 200px;
+}
+
+
+h2 {
+    font-size: 50px;
+    margin-left: 50px;
+    text-align:left;
+    color: #21aa5f;
+    font-weight: 100;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h2 span {
+    font-weight: 400;
+}
+
+.nav-toggler {
+    position: fixed;
+    z-index: 508;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.line {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #21aa5f;
+    transition: transform 0.3s ease-out,
+    opacity 0.1s ease-out;
+}
+.l1 {
+    transform: translateY(-10px)
+}
+.l3 {
+    transform: translateY(10px)
+}
+.nav-toggler.active .l1 {
+    transform: translateY(0px) rotate(135deg);
+    background-color:white;
+}
+.nav-toggler.active .l2 {
+    opacity: 0;
+    background-color:white;
+
+}
+.nav-toggler.active .l3 {
+    transform: translateY(0px) rotate(-135deg);
+    background-color:white;
+
+}
+
+nav {
+    position: fixed;
+    width: 250px;
+    min-height: 100vh;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #2ba6c5; /* Couleur de fond semi-transparente */
+    border-left: 1px solid #cfcfcf;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.73, 0.11, 0.67, 0.84);
+    z-index: 506; /* Assure que le menu reste au-dessus du contenu */
+}
+nav.active {
+    transform: translate(0);
+    z-index: 506; /* Assure que le menu actif reste au-dessus de tout sauf des traits et du bouton menu */
+
+}
+nav a {
+    font-family: Quicksand, sans-serif;
+    color: #f1f1f1;
+    font-size: 20px;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+
+/* pour la balise age */
+.age {
+    margin-bottom: 20px; /* Ajoute de l'espace en bas de la div */
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    margin: 80px auto 30px;
+}
+
+.age label {
+    font-weight: bold; /* Met le texte en gras */
+    font-size: 18px; /* Définit la taille de la police */
+    color: #3b3b3b; /* Change la couleur du texte */
+}
+
+
+/* pour la balise genre */
+.Genre {
+    display: flex; /* Utilise Flexbox pour organiser les éléments */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 20px; /* Ajoute un espace entre le label principal et les options */
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    margin: 80px auto 30px;
+}
+
+/* Style pour le label principal de la section Genre */
+.Genre > label {
+    font-weight: bold;
+    font-size: 18px;
+    color: #3b3b3b;
+}
+
+/* Conteneur pour les boutons radio */
+.radio-container {
+    display: flex;
+    flex-direction: column; /* Organise les boutons en colonne */
+    gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Style pour les labels des boutons radio (Homme, Femme) */
+.radio-container label {
+    font-weight: normal; /* Assure que ces labels ne sont pas en gras */
+    font-size: 16px; /* Taille légèrement inférieure si nécessaire */
+}
+
+.age input[type="text"] {
+    padding: 8px; /* Ajoute du rembourrage autour de l'entrée */
+    border: 1px solid #ccc; /* Ajoute une bordure grise */
+    border-radius: 4px; /* Arrondit les coins de l'entrée */
+    font-size: 18px; /* Définit la taille de la police */
+    width: 100%; /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur */
+    margin-top: 5px; /* Ajoute de l'espace au-dessus de l'entrée */
+}
+
+.age input[type="text"]:focus {
+    border-color: #21aa5f; /* Change la couleur de la bordure lorsqu'il est en focus */
+    outline: none; /* Supprime la bordure de focus par défaut */
+}
+
+
+ /* pour le bouton envoyer */
+
+ input[type="submit"] {
+    font-family: Lato, Helvetica, sans-serif;
+    background: #5acf93;
+    color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px; /* Ajoutez un espacement au-dessus du bouton */
+    margin-bottom: 100px;
+    transition: background-color 0.3s ease-in-out; /* Ajoutez une transition pour l'effet de survol */
+    margin: 20px auto 20px auto; /* Ajoute une marge en haut et en bas et auto sur les côtés pour centrer horizontalement */
+    display: block; /* Assurez-vous que le bouton est affiché comme un bloc pour qu'il prenne toute la largeur disponible */
+    text-align: center; /* Centre le texte à l'intérieur du bouton */
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%);
+    margin-left: 100px; 
+
+}
+
+input[type="submit"]:hover {
+    background-color: #21aa5f; /* Change la couleur de fond lors du survol */
+}
+
+
+
+.menu {
+    font-size: 25px;
+    text-align: right;
+    padding-bottom: 30;
+    margin-right: 150px;
+    color: #21aa5f;
+
+}
+
+
+
+.nav-toggler.active .menu {
+    color: #fff; /* Couleur du texte lorsque le menu est actif */
+}
+
+/* CSS des catégories de spécialistes */
+#categories {
+    display: flex; /* Utilisation de flexbox */
+    background-color:#d2fdd5; /* Changer la couleur de fond en rose */
+    padding: 20px; /* Ajouter un espacement autour de la barre */
+    height: 100px;
+}
+
+#categories h3 {
+    flex: 1; /* Chaque titre prend une part égale de l'espace disponible */
+    text-align: center; /* Centrer le texte horizontalement */
+    cursor: pointer; /* Changement de curseur au survol pour indiquer qu'il est cliquable */
+    margin: 0 10px; /* Ajouter un espacement entre les titres */
+    padding: 10px; /* Ajouter un espacement à l'intérieur des titres */
+    color: #2ba6c5;
+}
+
+/* Ajouter une bordure uniquement sur le côté droit des titres */
+#categories h3:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+#categories h3.selected {
+    color: #2ba6c5; /* Changer la couleur du texte en bleu pour la catégorie sélectionnée */
+}
+
+#contenu {
+    margin-top: 100px; /* Espacement entre les titres et les paragraphes */
+}
+
+#contenu p {
+    display: none; /* Masquer initialement tous les paragraphes */
+
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+}
+
+
+
+
+
+#categories  hr {
+    border: none;
+    height: 2px;
+    background-color: #2ba6c5;
+    margin-top: 5px; /* Espacement entre le HR et le texte */
+}
+
+
+
+/* Ajouter un HR bleu sous la catégorie sélectionnée */
+#categories .selected hr {
+    border: none;
+    height: 2px;
+    background-color: #2ba6c5;
+    margin-top: 5px; /* Espacement entre le HR et le texte */
+}
+
+
+/*pour le chat d assistance */
+
+#chatContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d2fdd5;
+    border: 1px solid #d2fdd5;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    z-index: 551;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#chatInput {
+    width: calc(100% - 20px);
+    height: 25px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+}
+
+/* pour aligner les deux boutons dans l aide  */
+.boutonDuchatAcote{
+
+    display: flex; /* Utilisation de flexbox */
+       justify-content: center; /* Centrer horizontalement */
+       align-items: center; /* Centrer verticalement */
+       margin-left: 10px;
+       
+   }
+
+
+/* pour le bouton ecrit envoyer le message dans la case aide */
+
+
+#chatButton {
+    width: 20%;
+    padding: 5px;
+    margin-left: 50px;
+    background-color: #2ba6c5;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    height: 25px;
+    font-size: 16px;
+    
+
+}
+
+/* pour le bouton du son  dans la case aide */
+
+#voiceToggleBtn {
+    width: 20%;
+    padding: 5px;
+    margin-left: 40%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    height: 25px;
+    font-size: 16px;
+}
+
+
+
+
+
+/* pour les balises localisation */
+.containerLocalisation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchbarSpeciialite{
+    width: 100%;
+}
+
+
+
+
+
+.localisation {
+    margin-bottom: 20px; /* Ajoute de l'espace en bas de la div */
+    position: relative;
+    max-width: 550px;
+    width: 100%;
+    margin: 80px auto 30px;
+}
+
+.localisation label {
+    margin-top: -30px;
+    font-weight: bold; /* Met le texte en gras */
+    font-size: 16px; /* Définit la taille de la police */
+    color: #3b3b3b; /* Change la couleur du texte */
+}
+
+.localisation input[type="text"] {
+    padding: 8px; /* Ajoute du rembourrage autour de l'entrée */
+    border: 1px solid #ccc; /* Ajoute une bordure grise */
+    border-radius: 4px; /* Arrondit les coins de l'entrée */
+    font-size: 16px; /* Définit la taille de la police */
+    width: 100%; /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur */
+    margin-top: 5px; /* Ajoute de l'espace au-dessus de l'entrée */
+}
+
+.localisation input[type="text"]:focus {
+    border-color: #21aa5f; /* Change la couleur de la bordure lorsqu'il est en focus */
+    outline: none; /* Supprime la bordure de focus par défaut */
+}
+
+#specialiteInput{
+    align-items: center;
+
+}
+
+
+
+#searchBtn {
+    font-family: Lato, Helvetica, sans-serif;
+    background: #5acf93;
+    color: #f1f1f1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px; /* Ajoutez un espacement au-dessus du bouton */
+    margin-bottom: 100px;
+    transition: background-color 0.3s ease-in-out; /* Ajoutez une transition pour l'effet de survol */
+    margin: 20px auto 20px auto; /* Ajoute une marge en haut et en bas et auto sur les côtés pour centrer horizontalement */
+    display: block; /* Assurez-vous que le bouton est affiché comme un bloc pour qu'il prenne toute la largeur disponible */
+    text-align: center; /* Centre le texte à l'intérieur du bouton */
+    position: absolute;
+    left: 50%;
+    transform: translateX(50%);
+    margin-left: 100px; 
+    
+    
+}
+
+#searchBtn:hover {
+    background-color: #21aa5f; /* Change la couleur de fond lors du survol */
+}
+
+.searchbarSpecialite,
+#specialiteDropdown {
+    color: #3b3b3b; /* Change la couleur du texte */
+
+    border-color: #ccc;
+    padding: 8px; /* Ajoute du rembourrage autour de l'entrée */
+    border-radius: 4px; /* Arrondit les coins de l'entrée */
+    font-size: 16px; /* Définit la taille de la police */
+    width: 100%; /* Prend toute la largeur disponible */
+    box-sizing: border-box; /* Inclut le rembourrage et la bordure dans la largeur */
+    margin-top: 5px; /* Ajoute de l'espace au-dessus de l'entrée */
+    margin-bottom: 20px; /* Ajoute de l'espace en bas de la balise */
+    max-width: 570px;
+    margin-left: auto; /* Centrer horizontalement */
+    margin-right: auto; /* Centrer horizontalement */
+}
+
+.searchbarSpecialite [type="text"]:focus,
+#specialiteDropdown:focus {
+    border-color: #21aa5f; /* Change la couleur de la bordure lorsqu'il est en focus */
+    outline: none; /* Supprime la bordure de focus par défaut */
+}
+
+
+
+
+/* pour les num d urgences */
+
+.NumUrg {
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+
+.NumUrg img {
+    width: 170px; /* Largeur fixe pour les images */
+    margin: 0 10px; /* Ajouter un espacement entre les images si nécessaire */
+    margin-bottom: 100px;
+}
+
+.containercasAsthme {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre verticalement le contenu */
+    padding-right: 5%; /* Ajoute un espacement de 5% à droite */
+    padding-left: 5%; /* Ajoute un espacement de 5% à gauche */
+}
+
+.casAsthme {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+}
+
+.asthma-image {
+    width: 400px; /* Ajuste la largeur de l'image à 30% de la largeur de la page */
+    margin-right: 10%; /* Ajoute une marge de droite de 5% */
+    margin-left: 20px;
+
+}
+
+.gravite-image {
+    width: 400px; /* Ajuste la largeur de l'image à 30% de la largeur de la page */
+    margin-right: 10%; /* Ajoute une marge de droite de 5% */
+    margin-left: 20px;
+}
+
+.Declenchementcrise {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+}
+
+.LeMaintenir {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+}
+
+.GravitePourcentage{
+  
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+}
+    
+.GravitePourcentage img {
+    width: 400px; /* Largeur fixe pour les images */
+}
+
+.asthmeChiffre{
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 20px;
+    margin-top : 20px;
+}
+
+.containerMultifacto {
+    display: flex;
+    align-content: center;
+    align-items: flex-start; /* Aligner les éléments en haut */
+    justify-content: space-between; /* Espace entre les éléments */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.Generall {
+    margin-right: 20px; /* Marge à droite pour l'image */
+    width: 400px; /* Ajuste la largeur de l'image à 30% de la largeur de la page */
+    margin-left: 10%;
+}
+
+.contentPartieDroite {
+    flex: 1; /* Laisser la deuxième colonne occuper tout l'espace restant */
+    max-width: calc(50% - 20px); /* Largeur maximale de la deuxième colonne */
+    margin-right: 2%;
+}
+
+.debcontentPartieDroite {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+    margin-top: 70px; /* Changer la marge supérieure du paragraphe */
+}
+.facteursEnvi{
+    margin-top: 15px; /* Changer la marge supérieure du paragraphe */
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+}
+
+
+.contentPartieDroite img {
+    max-width: 100%; /* Ajuster la largeur maximale de l'image */
+    margin-top: 15px; /* Espacement entre les paragraphes et les images */
+
+}
+
+.symptomPrincip-image {
+    width: 400px; /* Ajuste la largeur de l'image à 30% de la largeur de la page */
+    margin-right: 10%; /* Ajoute une marge de droite de 5% */
+    margin-left: 20px;
+}
+
+.ImpactQuali {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-right: 5%;
+}
+.resultneg{
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+}
+
+
+
+
+
+/* quels sont les personnes touchées */
+.personnetouchecontain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centre verticalement le contenu */
+    padding-right: 5%; /* Ajoute un espacement de 5% à droite */
+    padding-left: 5%; /* Ajoute un espacement de 5% à gauche */
+}
+
+.personnetouche {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 20px;
+}
+
+
+.parite1{
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 20px;
+    margin-top : 20px;
+}
+
+.parite2{
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 50px;
+    margin-top : 20px;
+    
+}
+
+.age-repartition-image {
+    width: 400px; /* Ajuste la largeur de l'image à 30% de la largeur de la page */
+    margin-right: 10%; /* Ajoute une marge de droite de 5% */
+    margin-left: 20px;
+}
+
+.genrerepartition{
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    margin-left: 10px;
+}
+
+
+    
+.genrerepartition img {
+    width: 400px; /* Largeur fixe pour les images */
+}
+
+#openChatBtn{ 
+    position: fixed;
+    z-index: 550;
+    top: 110px;
+    left: 20px;
+    font-family:fantasy;
+    background: #2ba6c5;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; 
+    text-align: center;
+    height: 30px;
+    width:60px;
+    transform: translateX(50%);
+    font-size: 25px;
+ 
+}
+
+
+
+
+/* 
+#openChatBtn{ 
+color: currentcolor;
+    text-decoration: none;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    position: fixed;
+    z-index: 2000;
+    height: 30px;
+    line-height: 30px;
+    width: auto;
+    padding-left: 15px;
+}
+ */
+
+
+
+/* pour resultat positfdi para */
+
+ .resultatpos p {
+
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 20px;
+}
+
+.predictionGravite {
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: red; /* Changer la couleur du texte en rouge */
+    font-size: 80px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+
+}
+
+.def{
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 20px; /* Changer la taille de la police à 18 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+}
+
+.footer-bar {
+    background-color: #ebeaea44; /* Couleur de la barre */
+    height: 127px; /* Hauteur de la barre */
+    width: 100%; /* Largeur de la barre */
+    bottom: 0; /* Aligner la barre en bas */
+    left: 0; /* Aligner la barre à gauche */
+    z-index: 1000; /* Assurer que la barre est au-dessus du contenu */
+}
+
+.createur {
+
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43); /* Changer la couleur du texte en bleu */
+    font-size: 14px; /* Changer la taille de la police à 14 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 50px;
+    margin-top : 15px;
+    text-align: right;
+    margin-right: 10%;
+    
+}
+
+.copyright{
+
+    flex: 1;
+    margin-left: 10%; /* Marge de gauche de 10% */
+    color: rgb(46, 43, 43);
+    font-size: 14px; /* Changer la taille de la police à 14 pixels */
+    font-family: "Times New Roman", Times, serif; /* Utiliser la police Times New Roman */
+    margin-bottom: 50px;
+    margin-top : 15px;
+    
+}
+
+/* Erreur sur le champ Genre */
+#genre-error {
+    color: red; 
+    display: none; 
+    font-size: 0.8em; 
+    margin-top: 5px;
+}
