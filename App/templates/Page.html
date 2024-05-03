@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asthme</title>
+        <link rel="stylesheet" href="./static/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+      </head>
+<body>
+
+
+    <nav>
+        <a href="{{ url_for('page_asthme') }}">Qu'est ce que l'asthme </a>
+        <a href="{{ url_for('page_contact_urgence') }}">Qui contacter</a>
+   </nav>
+   <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+    <p class="menu">MENU</p>
+    <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span>
+</button>
+
+<div class="nomappli">
+    <div class="logo-container">
+        <a href="{{ url_for('home') }}"> <img src="{{ url_for('serve_image', filename='logo.png') }}" alt="Description de l'image" class="logo" /></a>
+    </div>
+    <div class="text-container">
+        <h1><span class="Mussa">M</span>A<span class="Lare">Z</span>thma</h1>
+    </div>
+</div>
+
+
+ <!-- Bouton pour ouvrir le chat -->
+ <button id="openChatBtn">AIDE</button>
+
+ <!-- Fenêtre de chat -->
+ <div id="chatContainer">
+     <div id="chatOutput"></div>
+     <input type="text" id="chatInput" placeholder="Entrez votre réponse...">
+     <button id="voiceToggleBtn">Son ON</button>
+     <button id="chatButton" type="submit">Envoyer</button>
+     
+
+ </div>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<h2>La e-Santé </h2>
+<p class="def">
+    Voici un formulaire simple permettant d'effectuer une prédiction de crise d'Asthme<br>
+    Cette prédiction s'appuie sur l'intelligence artificielle<br>
+    Veuillez soigneusement remplir tous les champs afin d'obtenir une prédiction cohérente<br>
+    Concernant les traitements, veuillez rentrer ceux pris au cours des 12 derniers mois <br>
+</p>
+<form action="/submit" method="post">
+
+    <div class="age">
+        <label for="Age">* Âge :</label>
+        <input type="number" id="Age" name="Age" placeholder="exemple : 20" required oninvalid="this.setCustomValidity('Veuillez entrer votre âge')" oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="Genre">
+        <label>* Genre :</label>
+        <div class="radio-container">
+            <div>
+                <input type="radio" id="Genre1" name="Genre" value="1">
+                <label for="Genre1">Homme</label>
+            </div>
+            <div>
+                <input type="radio" id="Genre2" name="Genre" value="0">
+                <label for="Genre2">Femme</label>
+            </div>
+        </div>
+        <span id="genre-error" style="color:red; display:none;">Veuillez sélectionner votre genre.</span>
+    </div>
+    
+    
+
+
+    <div class="container">
+    <div class="first-dropdown">
+        <div class="select-btn">
+            <span class="btn-text">* Quels sont vos symptômes ?</span>
+            <span class="arrow-dwn">
+                <i class="fa-solid fa-chevron-down"></i>
+            </span>
+        </div>
+
+        <ul class="list-items first-dropdown">
+
+            <li class="item">
+                <input type="checkbox" id="toux" name="symptomes[]" value="Toux">
+            <label for="toux">Toux</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="allergie" name="symptomes[]" value="Allergies">
+            <label for="allergie">Allergies</label>
+            </li>
+
+            <li class="item">
+                    <input type="checkbox" id="sifflement" name="symptomes[]" value="Sifflement respiratoire">
+                    <label for="sifflement">Sifflement respiratoire</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="toux_3semaines" name="symptomes[]" value="Toux qui dure depuis plus de 3 semaines">
+                <label for="toux_3semaines">Toux depuis plus de 3 semaines</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="craquement_dans_poumons_inspiration" name="symptomes[]" value="Bruit de craquement dans les poumons pendant l inspiration">
+                <label for="craquement_dans_poumons_inspiration">Craquement lors de l'inspiration</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="peau_bleutee" name="symptomes[]" value="Peau bleutee">
+                <label for="peau_bleutee">Peau bleutee</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="congestion_poitrine" name="symptomes[]" value="Congestion de la poitrine">
+                <label for="congestion_poitrine">Congestion de la poitrine</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="tousser_mucus_jaune_vert" name="symptomes[]" value="Tousser du mucus jaune ou vert quotidiennement">
+                <label for="tousser_mucus_jaune_vert">Tousser du mucus jaune/vert </label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="somnolence_journee" name="symptomes[]" value="Somnolence dans la journee">
+                <label for="somnolence_journee">Somnolence dans la journee</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="diff_memoire_concentration" name="symptomes[]" value="Difficulte de memoire et de concentration">
+                <label for="diff_memoire_concentration">Problème de concentration</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="bouche_seche" name="symptomes[]" value="Bouche seche">
+                <label for="bouche_seche">Bouche seche</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fatigue_forte" name="symptomes[]" value="Fatigue forte">
+                <label for="fatigue_forte">Fatigue forte</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="a_bout_de_force" name="symptomes[]" value="A bout de force">
+                <label for="a_bout_de_force">A bout de force</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="reveil_nuit" name="symptomes[]" value="Reveil frequent dans la nuit">
+                <label for="reveil_nuit">Reveil frequent dans la nuit</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="mal_tete" name="symptomes[]" value="Mal de tete">
+                <label for="mal_tete">Mal de tete</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fievre_basse" name="symptomes[]" value="Fievre basse ou hypothermie">
+                <label for="fievre_basse">Fievre basse ou hypothermie</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="mal_tete_matinal" name="symptomes[]" value="Mal de tete matinal">
+                <label for="mal_tete_matinal">Mal de tete matinal</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="sueurs_nuit" name="symptomes[]" value="Sueurs dans la nuit">
+                <label for="sueurs_nuit">Sueurs dans la nuit</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="pause_respiratoire" name="symptomes[]" value="Pauses respiratoires">
+                <label for="pause_respiratoire">Pauses respiratoires</label> 
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="toux_seches_persistantes" name="symptomes[]" value="Toux seche persistante">
+                <label for="toux_seches_persistantes">Toux seche persistante</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="respiration_rapide" name="symptomes[]" value="Respiration rapide">
+                <label for="respiration_rapide">Respiration rapide</label><br> 
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="essouflement_sommeil" name="symptomes[]" value="Essouflement durant le sommeil">
+                <label for="essouflement_sommeil">Essouflement durant le sommeil</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="ronflements" name="symptomes[]" value="Ronflements">
+                <label for="ronflements">Ronflements</label><br>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="mal_gorge" name="symptomes[]" value="Mal de gorge">
+                <label for="mal_gorge">Mal de gorge</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="sautes_humeur" name="symptomes[]" value="Sautes d humeur">
+                <label for="sautes_humeur">Sautes d humeur</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="perte_poids_pas_appetit" name="symptomes[]" value="Perte de poids a cause d un manque d appetit">
+                <label for="perte_poids_pas_appetit">Perte de poids du a un manque d'appétit</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="bout_doigts_orteils_gros" name="symptomes[]" value="Bout des doigts et des orteils plus gros">
+                <label for="bout_doigts_orteils_gros">Bout des doigts et des orteils plus gros</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="toux_chronique" name="symptomes[]" value="Toux chronique">
+                <label for="toux_chronique">Toux chronique</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="froid" name="symptomes[]" value="Froid">
+                <label for="froid">Froid</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="diarrhee" name="symptomes[]" value="Diarrhee">
+                <label for="diarrhee">Diarrhee</label><br>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="triste" name="symptomes[]" value="Triste">
+                <label for="triste">Triste</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="vertiges" name="symptomes[]" value="Vertiges">
+                <label for="vertiges">Vertiges</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="toux_seche" name="symptomes[]" value="Toux seche">
+                <label for="toux_seche">Toux seche</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="oedeme" name="symptomes[]" value="Oedeme">
+            <label for="oedeme">Oedeme</label><br>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="evanouissement" name="symptomes[]" value="Evanouissements">
+                <label for="evanouissement">Evanouissements</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="toux_verdatre" name="symptomes[]" value="Toux verdatre">
+                <label for="toux_verdatre">Toux verdatre</label><br>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="palpitation_cardiaque" name="symptomes[]" value="Palpitations du coeur">
+                <label for="palpitation_cardiaque">Palpitations du coeur</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="irritabilite" name="symptomes[]" value="Irritabilite">
+                <label for="irritabilite">Irritabilite</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fievre_tres_elevee" name="symptomes[]" value="Fievre tres elevee">
+                <label for="fievre_tres_elevee">Fievre tres elevee</label>   
+            </li>
+
+            <li class="item"> 
+                <input type="checkbox" id="arthrite" name="symptomes[]" value="Arthrite">
+                <label for="arthrite">Arthrite</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="douleur_bas_dos" name="symptomes[]" value="Douleur en bas du dos">
+                <label for="douleur_bas_dos">Douleur en bas du dos</label>  
+            </li>
+
+            <li class="item">
+               <input type="checkbox" id="morve" name="symptomes[]" value="Mucus ou morve">
+                <label for="morve">Mucus ou morve</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="courbatures" name="symptomes[]" value="Courbatures">
+                <label for="courbatures">Courbatures</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="douleur_dans_corps" name="symptomes[]" value="Douleur dans tout le corps">
+            <label for="douleur_dans_corps">Douleur dans tout le corps</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="transpiration" name="symptomes[]" value="Transpiration excessive">
+                <label for="transpiration">Transpiration excessive</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="tousser_sang" name="symptomes[]" value="Tousser du sang">
+                <label for="tousser_sang">Tousser du sang</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="battements_coeur_rapide" name="symptomes[]" value="Battements de coeur rapides">
+                <label for="battements_coeur_rapide">Battements de coeur rapides</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fatigue" name="symptomes[]" value="Fatigue">
+                <label for="fatigue">Fatigue</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fievre" name="symptomes[]" value="Fievre">
+                <label for="fievre">Fievre</label>
+            </li>
+
+            <li class="item">   
+            <input type="checkbox" id="perte_appetit" name="symptomes[]" value="Perte d appetit">
+            <label for="steroides">Perte d appetit</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="baisse_energie" name="symptomes[]" value="Baisse d energie">
+                <label for="steroides">Baisse d energie</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="nez_coule" name="symptomes[]" value="Nez qui coule">
+                <label for="nez_coule">Nez qui coule</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="frisonnements" name="symptomes[]" value="Frissonnements">
+                <label for="frisonnements">Frissonnements</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="douleur_poitrine" name="symptomes[]" value="Douleur a la poitrine">
+                <label for="douleur_poitrine">Douleur a la poitrine</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="essouflement" name="symptomes[]" value="Essouflement">
+                <label for="essouflement">Essouflement</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="nez_bouche" name="symptomes[]" value="Nez bouche">
+                <label for="nez_bouche">Nez bouche</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="nausees" name="symptomes[]" value="Nausees">
+                <label for="nausees">Nausees</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="perte_poids_involontaires" name="symptomes[]" value="Perte de poids involontaire">
+                <label for="perte_poids_involontaires">Perte de poids involontaire</label>     
+            </li>
+        </ul>
+    </div>
+    </div>
+    <!-- Menu deroulant pour les traitements -->
+
+    <div class="container">
+    <div class="second-dropdown">
+            <div class="select-btn">
+                <span class="btn-text">* Quels sont vos traitements ?</span>
+                <span class="arrow-dwn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </span>
+            </div>
+            <ul class="list-items second-dropdown">
+
+            <li class="item">
+                <input type="checkbox" id="aucun_traitement" name="symptomes[]" value="Aucun traitement">
+                <label for="aucun_traitement">Aucun traitement</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="trait_a" name="symptomes[]" value="Mepolizumab">
+                <label for="trait_a">Autre traitements pour l'Asthme</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="nausee" name="symptomes[]" value="Nausée">
+                <label for="nausee">Nausée</label>
+            </li>
+            
+            <li class="item">
+                <input type="checkbox" id="chimio" name="symptomes[]" value="Chimiotherapie">
+                <label for="chimio">Chimiotherapie</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="medicament_toux" name="symptomes[]" value="Medicaments pour la toux">
+                <label for="medicament_toux">Medicaments pour la toux</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="diuretique" name="symptomes[]" value="Diuretique">
+                <label for="diuretique">Diuretique</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="ventilation_intrapulmonaire" name="symptomes[]" value="Ventilation intrapulmonaire">
+                <label for="ventilation_intrapulmonaire">Ventilation intrapulmonaire</label>   
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="fluides_intraveineux" name="symptomes[]" value="Fluides intraveineux">
+                <label for="fluides_intraveineux">Fluides intraveineux</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="mepolizumab" name="symptomes[]" value="Mepolizumab">
+                <label for="mepolizumab">Mepolizumab</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="omalizumab" name="symptomes[]" value="Omalizumab">
+                <label for="omalizumab">Omalizumab</label>  
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="oseltamivir" name="symptomes[]" value="Oseltamivir">
+                <label for="oseltamivir">Oseltamivir</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="reeducation_pulmonaire" name="symptomes[]" value="Reeducation pulmonaire">
+                <label for="reeducation_pulmonaire">Reeducation pulmonaire</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="aspirine" name="symptomes[]" value="Aspirine">
+                <label for="aspirine">Aspirine</label> 
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="ethambutol" name="symptomes[]" value="Ethambutol">
+                <label for="ethambutol">Ethambutol</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="saline_hypertonique" name="symptomes[]" value="Saline hypertonique">
+                <label for="saline_hypertonique">Saline hypertonique</label>    
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="chlorure_sodium" name="symptomes[]" value="Chlorure de sodium">
+                <label for="chlorure_sodium">Chlorure de sodium</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="itraconazole" name="symptomes[]" value="Itraconazole">
+                <label for="itraconazole">Itraconazole</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="pyrazinamide" name="symptomes[]" value="Pyrazinamide">
+                <label for="pyrazinamide">Pyrazinamide</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="rifampin" name="symptomes[]" value="Rifampin">
+                <label for="rifampin">Rifampin</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="gouttes_nasales" name="symptomes[]" value="Gouttes nasales">
+                <label for="gouttes_nasales">Gouttes nasales</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="steroides" name="symptomes[]" value="Steroides">
+                <label for="steroides">Steroides</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="chirurgie" name="symptomes[]" value="Chirurgie dans les 3 derniers mois">
+                <label for="chirurgie">Chirurgie dans les 3 derniers mois</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="rayon_X" name="symptomes[]" value="Rayon X dans les 3 derniers mois">
+                <label for="rayon_X">Rayon X dans les 3 derniers mois</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="antibiotique" name="symptomes[]" value="Antibiotique">
+                <label for="antibiotique">Antibiotique</label>
+            </li>
+
+            <li class="item">
+                <input type="checkbox" id="inhalateur" name="symptomes[]" value="Inhalateur">
+                <label for="inhalateur">Inhalateur</label>
+            </li>
+        </ul>
+    </div>
+    </div>
+<input type="submit" value="Envoyer">
+    </form>
+
+    <br><br><br><br><br><br>
+    <div class="footer-bar"> 
+        <div class="personnetouchecontain">
+
+            <p class="copyright">Copyright © 2024 MaZthma, tous droits réservés.<br>
+                Contactez-nous via notre établissement.<br>
+                
+                Université de Pau et des Pays de l'Adour<br>
+                Responsable Emna Hosni<br>
+            </p>
+            <p class="createur"> Réalisé par : 
+                Mussato Vincent //
+            Laresuza Adrien </p>
+        </div>
+    </div>
+
+<script src="./static/js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

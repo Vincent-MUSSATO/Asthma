@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asthme</title>
+        <link rel="stylesheet" href="./static/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">    
+    </head>
+
+    <body>
+        <nav class="navbar-side">
+
+            <a href="{{ url_for('home') }}">Application</a>
+            <a href="{{ url_for('page_contact_urgence') }}">Qui contacter </a>
+
+        </nav>
+        <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+            <p class="menu">MENU</p>
+
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+        
+    <div class="nomappli">
+        <div class="logo-container">
+            <a href="{{ url_for('home') }}"> <img src="{{ url_for('serve_image', filename='logo.png') }}" alt="Description de l'image" class="logo" /></a>
+        </div>
+        <div class="text-container">
+            <h1><span class="Mussa">M</span>A<span class="Lare">Z</span>thma</h1>
+        </div>
+    </div>
+
+    <!-- Bouton pour ouvrir le chat -->
+    <button id="openChatBtn">AIDE</button>
+
+    <!-- Fenêtre de chat -->
+    <div id="chatContainer">
+        <div id="chatOutput"></div>
+        <input type="text" id="chatInput" placeholder="Entrez votre réponse...">
+        
+        <div class="boutonDuchatAcote">
+            <button id="voiceToggleBtn">Son ON</button>
+        <button id="chatButton" type="submit">Envoyer</button>
+        
+        </div>
+    </div>
+
+
+
+
+
+    <br><br><br><br><br><br><br>
+        <h2>Le cas de l'asthme</h2>
+    
+        <div class="containercasAsthme">
+            <p class="casAsthme">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les maladies des voies respiratoires sont des pathologies affectant les voies de passage de l’air, notamment les voies nasales, les bronches et les poumons.<br>
+                Les maladies respiratoires englobent les infections respiratoires aiguës ainsi que les maladies respiratoires chroniques telles que l’asthme, la bronchopneumopathie chronique obstructive et le cancer du poumon. <br>
+                <!--( source https://www.emro.who.int/fr/health-topics/respiratory-tract-diseases/Page-1.html  )-->
+                Nous prenons en compte dans cette application l' asthme. <br>
+            L 'asthme est une maladie chronique, caractérisée par une inflammation  des bronches, qui se manifeste par des crises. <br>
+            Entre deux crises d’asthme, la respiration est généralement normale. L’asthme est une maladie fréquente, dont les causes sont multiples.<br>
+            </p>
+            <img src="{{ url_for('serve_image', filename='Répartition_asthme.png') }}" alt="repartition generale de la maladie" class="asthma-image">
+    </div>
+
+        <h2>L'asthme : Qu'est ce que c'est ?</h2>
+
+        
+    <div class="containercasAsthme">
+        <p class="casAsthme">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L'asthme est une maladie respiratoire chronique due à une inflammation (ou irritation)  permanente des bronches.<br>
+            Il se manifeste par des crises. Les crises d'asthme peuvent durer de plusieurs minutes à quelques heures. <br>
+            Entre deux crises, la respiration redevient normale.<br>
+            La fréquence et l'intensité des crises d'asthme varient d'un individu à l'autre.<br>
+        </p>
+
+        <img src="{{ url_for('serve_image', filename='Répartition_de_la_gravité_totale.png') }}" alt="repartition generale de la gravite" style="width: 400px;" class="gravite-image" />
+
+    </div>
+        <h2>Comment les crises d'asthme se déclenchent-elles ?</h2>
+
+        <p class="Declenchementcrise">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lors de la respiration, l’air circule par les bronches pour arriver aux poumons. <br>
+            Chez une personne asthmatique, la paroi interne de ces conduits (muqueuse bronchique) est irritée et épaissie. <br>
+            Cette inflammation permanente rend les bronches sensibles, sujettes à des réactions excessives en présence de facteurs favorisants.<br>
+            Une crise d’asthme peut alors se déclencher : le passage de l’air dans les bronches devient difficile (contraction des muscles autour des bronches et sécrétion importante de mucus).<br>
+        </p>
+
+        <h2>L'asthme en chiffre </h2>
+
+        <p class="asthmeChiffre">
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En effet comme nous l'à montré notre analyse des différentes personnes atteintes de maladies respiratoires l 'asthme n'est pas la plus prédomminantes mais touches quand même une grand parties de la population.<br>
+            L’asthme touche environ 4 millions de personnes en France, et est responsable chaque année de près de 60 000 hospitalisations (38 000 chez les asthmatiques de plus de 15 ans) et presque 1 000 décès.
+        </p>
+
+    <div class="GravitePourcentage">
+        <img src="{{ url_for('serve_image', filename='Répartition_de_la_gravité_chez_les_adolescents_de_15_a_24_ans.png') }}" alt="grraph ado gravite" />
+        <img src="{{ url_for('serve_image', filename='Répartition_de_la_gravité_chez_les_enfants_de_0_a_14_ans.png') }}" alt="graph enfant grravite"/>
+    </div>
+    <div class="GravitePourcentage">
+
+        <img src="{{ url_for('serve_image', filename='Répartition_de_la_gravité_chez_les_adultes_de_25_a_64_.png') }}" alt="graph adulte gravite" />
+        <img src="{{ url_for('serve_image', filename='Répartition_de_la_gravité_chez_les_aînés_de_65_ans_et_plus.png') }}" alt="graph aine gravite" />
+    </div>
+
+    <p class="asthmeChiffre">
+            Toute personne asthmatique bénéficiant d’une bonne prise en charge peut mener ses activités sans risque, ni limitation. Mais on ne peut cependant pas parler de guérison.
+        </p>
+
+        <h2>Comment le maintenir ?</h2>
+
+        <p class="LeMaintenir">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Afin de savoir si votre asthme est vraiment contrôlé, répondez à ces 4 questions en pensant aux 4 dernières semaines : <br><br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•Avez-vous été gêné dans la journée plus de 2 fois par semaine (difficulté à respirer, sensation d’oppression dans la poitrine, toux sèche, respiration sifflante) ?<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Votre asthme vous at-il réveillé la nuit ?<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Avez-vous eu des difficultés pour pratiquer vos activités habituelles ?<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Avez-vous eu besoin d’utiliser votre traitement de crise plus de deux fois par semaine ?<br><br>
+            Si vous avez répondu « non » à toutes ces questions, que votre asthme n’a pas de conséquence sur votre quotidien et sur vos activités, alors il semble contrôlé : bravo !<br>
+        </p>
+
+        <h2> Comment se manifeste il ? </h2>
+
+        <h2>L’asthme, une maladie multifactorielle </h2>
+
+    <div class="containerMultifacto">
+
+
+        <img src="{{ url_for('serve_image', filename='vue-globale-mecanisme-asthme.jpg') }}" alt="asthme" style="width: 500px;" class="Generall" />
+        <div class="contentPartieDroite">
+
+        <p class="debcontentPartieDroite">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L’asthme n’a pas une cause unique, des facteurs génétiques et des facteurs environnementaux interviennent dans la genèse de cette maladie.<br> 
+            Chez les asthmatiques, différents facteurs peuvent déclencher des crises d’asthme : <br><br>
+
+        </p>
+
+                    <p class="facteursEnvi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•les allergènes présents à l’intérieur des habitations (acariens, moisissures) ou sur le lieu de travail; </p><br>
+                
+                    <P class="facteursEnvi" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•les allergènes extérieurs (pollens et moisissures);<br>
+                    
+                
+                    <!--<img src="{{ url_for('serve_image', filename='vigilance_map_pollen_france_11avril.png') }}" alt="pollen" style="width: 500px;" class="pollen-image" />-->
+                    
+                    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultez directement la carte du taux de pollen ici :
+                    <a href="https://www.pollens.fr/">Pollen</a>
+                </P><br>
+                    
+                    <p  class="facteursEnvi">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•les irritants respiratoires (fumée de tabac, pollution de l’air, irritants présents dans le lieu de travail);<br>
+
+                    
+                    
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultez directement la carte de la pollution atmosphérique ici :
+                        <a href="https://www.atmo-france.org">Pollution </a>
+                        </p><br>
+                        
+                    <p class="facteursEnvi" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•certains médicaments (anti-inflammatoires).
+                    </p> <br>
+            
+    </div>
+    </div>
+
+
+    <div class="containercasAsthme">
+        <p class="casAsthme">
+
+    
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Voici donc comme le montre ce graphique les principaux symptomes des personnes touchées par cette maladie .
+        </p>
+        <img src="{{ url_for('serve_image', filename='Visualisation_symptome.png') }}" alt="symptome" style="width: 500px;"  class="symptomPrincip-image"/>
+
+    </div>
+
+        <h2>Un fort impact sur la qualité de vie</h2>
+
+        <p class="ImpactQuali">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;En l’absence d’une prise en charge adaptée, l’asthme peut altérer considérablement la qualité de vie.<br>
+            Il est responsable d’absentéisme à l’école ou au travail. <br>
+        
+            Ces dernières décennies, on a vu augmenter considérablement le nombre d’asthmatiques.<br>
+            Cette augmentation est principalement due à un facteur environnemental.<br>
+            En effet, la pollution, en constante augmentation, est responsable du développement de maladies respiratoires.<br>
+            Les populations des pays industrialisés seraient donc les premières victimes de l’asthme.
+        </p>
+        <br>
+
+        <h2>Quelles sont les personnes touchées ?</h2>
+    
+
+
+        <div class="personnetouchecontain">
+            <p class="personnetouche">
+        
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les premières manifestations surviennent le plus souvent chez l’enfant.<br>
+
+            L’asthme, et surtout les crises sont très fréquentes jusqu’à la période de l’adolescence.<br>
+        
+            Cela dit, si on a de l’asthme pendant l’enfance, cela ne veut pas dire que l’on est condamné à subir les crises tout au long de sa vie. Beaucoup d’enfants voient leurs crises diminuer en grandissant.
+        </p>
+        <img src="{{ url_for('serve_image', filename='repartition_age.png') }}" alt="symptome"  class="age-repartition-image" />
+
+    </div>
+
+
+
+        
+    <p class="parite1">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Au niveau de la parité, l’asthme ne semble pas avoir de lien avec le sexe comme le montre cette analyse.
+    </p>
+    <div class="genrerepartition">
+        <img src="{{ url_for('serve_image', filename='Répartition_enfants.png') }}" alt="symptome"   />
+
+        <img src="{{ url_for('serve_image', filename='Répartition_genre.png') }}" alt="genre"   />
+    </div>
+        <p class="parite2">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les enfants ayant le même style de vie développe à part égale la maladie. <br>
+            Confirmant que le genre n'est pas un critère de développement.Comme nous le constatons, beaucoup d'hommes sont touchés par la maladie au totale.<br>
+            Pouvant ainsi accentuer le fait des conditions de vie, de travail.<br>
+            Sachant par exemple que 80 % des métiers ouvriers sont occupées par les hommes.Favorisant les zones poussiéreuses etc..
+        </p>
+
+
+        <div class="footer-bar"> 
+            <div class="personnetouchecontain">
+
+            <p class="copyright">Copyright © 2024 MaZthma, tous droits réservés.<br>
+                Contactez-nous via notre établissement.<br>
+                
+                Université de Pau et des Pays de l'Adour<br>
+                Responsable Emna Hosni<br>
+            </p>
+            <p class="createur"> Réalisé par : 
+                Mussato Vincent //
+            Laresuza Adrien </p>
+        </div>
+        </div>
+
+
+    <script src="./static/js/asthme.js"></script>
+    </body>
+</html>

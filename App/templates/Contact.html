@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asthme</title>
+        <link rel="stylesheet" href="./static/css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+      </head>
+
+    <body>
+
+        
+        <nav class="navbar-side">
+            <a href="{{ url_for('home') }}">Application</a>
+            <a href="{{ url_for('page_asthme') }}">Qu'est ce que l'asthme</a>
+        </nav>
+        <button type="button" aria-label="toggle curtain navigation" class="nav-toggler">
+            <p class="menu">MENU</p>
+
+            <span class="line l1"></span>
+            <span class="line l2"></span>
+            <span class="line l3"></span>
+        </button>
+
+
+
+    <div class="nomappli">
+        <div class="logo-container">
+            <a href="{{ url_for('home') }}"> <img src="{{ url_for('serve_image', filename='logo.png') }}" alt="Description de l'image" class="logo" /></a>
+        </div>
+        <div class="text-container">
+            <h1><span class="Mussa">M</span>A<span class="Lare">Z</span>thma</h1>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+
+
+
+
+
+    <h2>Quel est le personnel de santé pour l'asthme ?</h2>
+
+    <div id="categories">
+        <h3 id="pneumologue">Pneumologue</h3>
+        <h3 id="allergologue">Allergologue</h3>
+        <h3 id="medecin_generaliste">Médecin généraliste</h3>
+        <h3 id="pediatre">Pédiatre</h3>
+    </div>
+
+    <div id="contenu">
+        <p id="pneumologueContent">
+            PNEUMOLOGUE <br><br>
+            Que ce soit en milieu hospitalier ou dans un cabinet de ville, le pneumologue est un médecin spécialiste confronté aux maladies des voies respiratoires<br>
+            Son métier consiste en un examen clinique des voies respiratoires, à savoir la trachée, les bronches, le diaphragme, la plèvre, les poumons...<br>
+            Pour ce faire, il dispose de nombreux outils, notamment les pneumographies et tests d'effort.<br>
+            Le pneumologue prend aussi bien en charge de jeunes enfants (à intuber), des personnes âgées ou obèses (à mettre sous ventilation), des sportifs (décollement de la plèvre) ou des travailleurs (de l'industrie minière).<br>
+
+        </p>
+        <p id="allergologueContent">
+            ALLERGOLOGUE <br>  <br>
+            L’allergologie est la spécialité médicale qui s’intéresse à l’étude, au diagnostic et au traitement de toutes les manifestations cliniques et biologiques du système immunitaire et des allergies.<br>
+            La discipline de l'allergologie est couplée avec l’immunologie clinique. <br><br>     
+            Comment se caractérise une allergie ?<br><br>
+            L'allergie désigne une réaction anormale du système immunitaire contre des éléments inoffensifs, mais étrangers à l’organisme, que l’on appelle allergènes.<br>
+
+            Quand consulter un allergologue ?<br>
+            Vous pouvez consulter un allergologue pour différents types d’allergie. Pour notre cas :<br>
+            les allergies respiratoires, comme celles aux pollens, aux acariens, aux animaux ou encore aux moisissures.<br>
+
+        </p>
+        <p id="medecin_generalisteContent">
+            MEDECIN-GENERALISTE<br><br>
+            Qu'il traite une grippe ou prescrive un examen, le généraliste prend en charge ses patients dans leur globalité (habitudes, hygiène de vie, antécédents) et les suit le plus souvent sur une longue période.<br>
+            Médecin traitant, il assure la coordination avec ses confrères spécialistes afin de guider ses patients<br>
+            
+            
+        </p>
+        <p id="pediatreContent">
+                PEDIATRE <br><br>
+                La pédiatrie est la spécialité médicale qui s’intéresse à l’enfant et à ses maladies, depuis la vie intra-utérine (avec la collaboration des obstétriciens) jusqu’au terme de l’adolescence.<br>
+                Le pédiatre est le spécialiste des enfants, il est considéré comme le médecin généraliste des enfants. C’est d’ailleurs la spécificité de la population qu’il soigne qui fait du pédiatre un spécialiste.<br>
+                
+        </p>
+    </div>
+
+
+    <h2>Contactez les directements ici :</h2>
+
+        <br><br>
+
+    <div class="containerLocalisation">
+        <div class="localisation">
+            <label for="Localisation">Localisation:</label>
+            <input type="text" id="localisation" name="localisation" placeholder="Entrez votre localisation">
+        </div>
+        <div class="searchbarSpecialite">
+            <select class="searchbar-dropdown" id="specialiteDropdown">
+                <option value="" disabled selected>Sélectionnez une spécialité</option>
+                <option value="medecin-generaliste">Médecin Généraliste</option>
+                <option value="pneumologue">Pneumologue</option>
+                <option value="pediatre">Pédiatre</option>
+                <option value="allergologue">Allergologue</option>
+                <!-- Ajoutez d'autres spécialités au besoin -->
+            </select>
+        </div>
+    </div>
+        <button id="searchBtn">Rechercher sur Doctolib</button><br><br>
+    <h2>Quels sont les numéros à composer en cas d'urgence ?</h2>
+
+    <div class="NumUrg">
+    <img src="{{ url_for('serve_image', filename='112.png') }}" alt="112" style="width: 170px;" />
+    <img src="{{ url_for('serve_image', filename='18.png') }}" alt="18" style="width: 170px;" />
+    <img src="{{ url_for('serve_image', filename='15.png') }}" alt="15" style="width: 170px;" />
+
+    </div>
+
+    <button id="openChatBtn">AIDE</button>
+
+    <!-- Fenêtre de chat -->
+    <div id="chatContainer">
+        <div id="chatOutput"></div>
+        <input type="text" id="chatInput" placeholder="Entrez votre réponse...">
+        <button id="voiceToggleBtn">Son ON</button>
+        <button id="chatButton" type="submit">Envoyer</button>
+    
+
+    </div>
+    <div class="footer-bar"> 
+        <div class="personnetouchecontain">
+
+        <p class="copyright">Copyright © 2024 MaZthma, tous droits réservés.<br>
+            Contactez-nous via notre établissement.<br>
+            
+            Université de Pau et des Pays de l'Adour<br>
+            Responsable Emna Hosni<br>
+        </p>
+        <p class="createur"> Réalisé par : 
+            Mussato Vincent //
+        Laresuza Adrien </p>
+    </div>
+    </div>
+
+
+    <script src="./static/js/contact.js"></script>
+    </body>
+</html>
